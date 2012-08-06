@@ -76,11 +76,6 @@ enum {
 //		
 //		[self addNewSpriteAtPosition:ccp(s.width/2, s.height/2)];
 //		
-//		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Tap screen" fontName:@"Marker Felt" fontSize:32];
-//		[self addChild:label z:0];
-//		[label setColor:ccc3(0,0,255)];
-//		label.position = ccp( s.width/2, s.height-50);
-//		
 		[self scheduleUpdate];
 	}
 	return self;
