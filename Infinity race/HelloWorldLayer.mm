@@ -57,7 +57,7 @@ enum {
 		// init physics
 		[self initPhysics];
 		
-		// create reset button
+
 //		[self createMenu];
 		
 		//Set up sprite
