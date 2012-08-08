@@ -11,7 +11,7 @@
 
 @implementation PlayerManager
 
-@synthesize player = _player;
+//@synthesize player = _player;
 
 -(id) initWithWorld:(b2World *)world
 {

@@ -291,9 +291,9 @@ enum {
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [_rope createRopeWithBodyA:_playerManager.pl.body anchorA:_player.body->GetLocalCenter()
-                         bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
-                          sag:1.1];
+//    [_rope createRopeWithBodyA:_playerManager.pl.body anchorA:_player.body->GetLocalCenter()
+//                         bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
+//                          sag:1.1];
 }
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
