@@ -15,6 +15,8 @@
 {
     if (self = [super init] ) {
         _world = world;
+        _player = [[Player alloc] initWithWorld: world];
+        [_player activateCollisions];
     }
     
     return self;
