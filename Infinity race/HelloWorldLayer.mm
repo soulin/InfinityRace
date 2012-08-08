@@ -14,6 +14,7 @@
 
 #import "PhysicsSprite.h"
 
+
 enum {
 	kTagParentNode = 1,
 };
@@ -56,8 +57,29 @@ enum {
 		
 		// init physics
 		[self initPhysics];
-		
-
+        
+        _player = [[Player alloc] initWithWorld: world];
+        [_player activateCollisions];
+        [self addChild:_player];
+        
+        _anchorPoint = [[AnchorPoint alloc] initWithWorld:world];
+        [_anchorPoint activateCollisions];
+        [self addChild:_anchorPoint];
+        
+        _anchorPoint1 = [[AnchorPoint alloc] initWithWorld:world];
+        [_anchorPoint1 activateCollisions];
+        CGSize screen = [[CCDirector sharedDirector] winSize];
+        _anchorPoint1.body->SetTransform(b2Vec2(screen.width/3.2/PTM_RATIO,screen.height/3.4/PTM_RATIO), 0);
+     //   [_anchorPoint1 setPosition:ccp(screen.width/1.6/PTM_RATIO,screen.height/1.2/PTM_RATIO)];
+        [self addChild:_anchorPoint1];
+        
+        _rope = [[RopeManager alloc] initWithFile:@"rope.png" andWorld:world];
+        [self addChild:_rope];
+        
+   /*     [self createRopeWithBodyA:_player.body anchorA:_player.body->GetLocalCenter()
+                            bodyB:_anchorPoint.body anchorB:_anchorPoint.body->GetLocalCenter()
+                              sag:1.1];
+*/
 //		[self createMenu];
 		
 		//Set up sprite
@@ -91,6 +113,7 @@ enum {
 	
 	[super dealloc];
 }	
+
 
 //-(void) createMenu
 //{
@@ -264,9 +287,28 @@ enum {
 	
 	// Instruct the world to perform a single step of simulation. It is
 	// generally best to keep the time step and iterations fixed.
-	world->Step(dt, velocityIterations, positionIterations);	
+	world->Step(dt, velocityIterations, positionIterations);
+
+    //Iterate over the bodies in the physics world
+    for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+    {
+        CCSprite *myActor = (CCSprite*)b->GetUserData();
+        if (myActor)
+        {
+            //Synchronize the AtlasSprites position and rotation with the corresponding body
+            myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
+            myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+        }
+    }
+    
+    [_rope update:dt];
 }
 
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_rope createRopeWithBodyA:_player.body anchorA:_player.body->GetLocalCenter()
+                         bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
+                          sag:1.1];
+}
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//Add a new body/atlas sprite at the touched location

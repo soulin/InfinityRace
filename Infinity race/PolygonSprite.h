@@ -8,25 +8,28 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Vector3.h"
+#import "box2d.h"
 
-typedef struct _ccV2F_T2F
-{
-	ccVertex2F		vertices;
-	ccTex2F			texCoords;
-} ccV2F_T2F;
+#define PTM_RATIO 32
 
-@interface PolygonSprite : CCSprite {
-    NSMutableArray* _vertices;
-	NSMutableArray* _triangles;
-    
-    ccV2F_T2F* coords;
+@interface PolygonSprite: CCNode {
+    b2Body *_body;
+    BOOL _original;
+    b2Vec2 _centroid;
+
 }
-@property (nonatomic, retain) NSMutableArray* vertices;
-@property (nonatomic, retain) NSMutableArray* triangles;
 
-+(id) createWithFile:(NSString*)file withVertices:(NSArray*)verts;
--(Vector3*) getTriangleIndicesFromPoint1:(CGPoint)p1 point2:(CGPoint)p2 point3:(CGPoint)p3;
--(void) setCoordInfo;
+@property(nonatomic,assign)b2Body *body;
+@property(nonatomic,readwrite)BOOL original;
+@property(nonatomic,readwrite)b2Vec2 centroid;
+
+-(id)initWithBody:(b2Body*)body original:(BOOL)original;
+-(id)initWithWorld:(b2World *)world;
+
+-(b2Body*)createDynamicBodyForWorld:(b2World*)world position:(b2Vec2)position rotation:(float)rotation vertices:(b2Vec2*)vertices vertexCount:(int32)count density:(float)density friction:(float)friction restitution:(float)restitution;
+-(b2Body*)createStaticBodyForWorld:(b2World*)world position:(b2Vec2)position rotation:(float)rotation vertices:(b2Vec2*)vertices vertexCount:(int32)count density:(float)density friction:(float)friction restitution:(float)restitution;
+-(void)activateCollisions;
+-(void)deactivateCollisions;
+//-(void)setPosition:(CGPoint) position;
 
 @end

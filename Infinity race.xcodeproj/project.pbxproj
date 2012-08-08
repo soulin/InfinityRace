@@ -184,6 +184,13 @@
 		E233847D15D11C2F001C1A76 /* PolygonSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = E233847C15D11C2F001C1A76 /* PolygonSprite.mm */; };
 		E233848415D140E0001C1A76 /* Vector3.m in Sources */ = {isa = PBXBuildFile; fileRef = E233848315D140E0001C1A76 /* Vector3.m */; };
 		E233848715D14C86001C1A76 /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E233848515D14C86001C1A76 /* triangulate.cpp */; };
+		E233848F15D22EAB001C1A76 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = E233848E15D22EAB001C1A76 /* Player.mm */; };
+		E233849215D22EBC001C1A76 /* AnchorPoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = E233849115D22EBC001C1A76 /* AnchorPoint.mm */; };
+		E233849C15D25553001C1A76 /* rope.png in Resources */ = {isa = PBXBuildFile; fileRef = E233849515D25553001C1A76 /* rope.png */; };
+		E233849D15D25553001C1A76 /* VPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E233849715D25553001C1A76 /* VPoint.m */; };
+		E233849E15D25553001C1A76 /* VRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E233849915D25553001C1A76 /* VRope.mm */; };
+		E233849F15D25553001C1A76 /* VStick.m in Sources */ = {isa = PBXBuildFile; fileRef = E233849B15D25553001C1A76 /* VStick.m */; };
+		E23384A215D26EC0001C1A76 /* RopeManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A115D26EC0001C1A76 /* RopeManager.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -548,12 +555,25 @@
 		E2280BE115CECB290067F356 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		E2280BE215CECB290067F356 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
 		E2280BE415CECB290067F356 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
-		E233847B15D11C2F001C1A76 /* PolygonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonSprite.h; sourceTree = "<group>"; };
-		E233847C15D11C2F001C1A76 /* PolygonSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PolygonSprite.mm; sourceTree = "<group>"; };
+		E233847B15D11C2F001C1A76 /* PolygonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PolygonSprite.h; path = "Infinity race/PolygonSprite.h"; sourceTree = "<group>"; };
+		E233847C15D11C2F001C1A76 /* PolygonSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PolygonSprite.mm; path = "Infinity race/PolygonSprite.mm"; sourceTree = "<group>"; };
 		E233848215D140E0001C1A76 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
 		E233848315D140E0001C1A76 /* Vector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector3.m; sourceTree = "<group>"; };
 		E233848515D14C86001C1A76 /* triangulate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulate.cpp; sourceTree = "<group>"; };
 		E233848615D14C86001C1A76 /* triangulate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangulate.h; sourceTree = "<group>"; };
+		E233848D15D22EAB001C1A76 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		E233848E15D22EAB001C1A76 /* Player.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Player.mm; sourceTree = "<group>"; };
+		E233849015D22EBC001C1A76 /* AnchorPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorPoint.h; sourceTree = "<group>"; };
+		E233849115D22EBC001C1A76 /* AnchorPoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnchorPoint.mm; sourceTree = "<group>"; };
+		E233849515D25553001C1A76 /* rope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rope.png; path = "../vrope-latest/rope.png"; sourceTree = "<group>"; };
+		E233849615D25553001C1A76 /* VPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPoint.h; sourceTree = "<group>"; };
+		E233849715D25553001C1A76 /* VPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPoint.m; sourceTree = "<group>"; };
+		E233849815D25553001C1A76 /* VRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRope.h; sourceTree = "<group>"; };
+		E233849915D25553001C1A76 /* VRope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VRope.mm; sourceTree = "<group>"; };
+		E233849A15D25553001C1A76 /* VStick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VStick.h; sourceTree = "<group>"; };
+		E233849B15D25553001C1A76 /* VStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VStick.m; sourceTree = "<group>"; };
+		E23384A015D26EC0001C1A76 /* RopeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RopeManager.h; sourceTree = "<group>"; };
+		E23384A115D26EC0001C1A76 /* RopeManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RopeManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,6 +599,11 @@
 		E22809A915CECB260067F356 = {
 			isa = PBXGroup;
 			children = (
+				E233847B15D11C2F001C1A76 /* PolygonSprite.h */,
+				E233847C15D11C2F001C1A76 /* PolygonSprite.mm */,
+				E233849315D23983001C1A76 /* World Objects Managers */,
+				E233848C15D22E87001C1A76 /* World Objects */,
+				E233849415D25553001C1A76 /* vrope-latest */,
 				E22809CA15CECB260067F356 /* Infinity race */,
 				E22809B715CECB260067F356 /* Frameworks */,
 				E22809B515CECB260067F356 /* Products */,
@@ -625,8 +650,6 @@
 				E22809CB15CECB260067F356 /* Resources */,
 				E22809E515CECB270067F356 /* libs */,
 				E2280BD115CECB290067F356 /* Supporting Files */,
-				E233847B15D11C2F001C1A76 /* PolygonSprite.h */,
-				E233847C15D11C2F001C1A76 /* PolygonSprite.mm */,
 				E233848515D14C86001C1A76 /* triangulate.cpp */,
 				E233848615D14C86001C1A76 /* triangulate.h */,
 				E233848215D140E0001C1A76 /* Vector3.h */,
@@ -638,6 +661,7 @@
 		E22809CB15CECB260067F356 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E233849515D25553001C1A76 /* rope.png */,
 				E22809CC15CECB260067F356 /* Default.png */,
 				E22809CE15CECB260067F356 /* Default-Landscape~ipad.png */,
 				E22809D015CECB260067F356 /* fps_images.png */,
@@ -1157,6 +1181,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E233848C15D22E87001C1A76 /* World Objects */ = {
+			isa = PBXGroup;
+			children = (
+				E233848D15D22EAB001C1A76 /* Player.h */,
+				E233848E15D22EAB001C1A76 /* Player.mm */,
+				E233849015D22EBC001C1A76 /* AnchorPoint.h */,
+				E233849115D22EBC001C1A76 /* AnchorPoint.mm */,
+			);
+			name = "World Objects";
+			sourceTree = "<group>";
+		};
+		E233849315D23983001C1A76 /* World Objects Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E23384A015D26EC0001C1A76 /* RopeManager.h */,
+				E23384A115D26EC0001C1A76 /* RopeManager.mm */,
+			);
+			name = "World Objects Managers";
+			path = "Infinity race";
+			sourceTree = "<group>";
+		};
+		E233849415D25553001C1A76 /* vrope-latest */ = {
+			isa = PBXGroup;
+			children = (
+				E233849615D25553001C1A76 /* VPoint.h */,
+				E233849715D25553001C1A76 /* VPoint.m */,
+				E233849815D25553001C1A76 /* VRope.h */,
+				E233849915D25553001C1A76 /* VRope.mm */,
+				E233849A15D25553001C1A76 /* VStick.h */,
+				E233849B15D25553001C1A76 /* VStick.m */,
+			);
+			path = "vrope-latest";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1221,6 +1279,7 @@
 				E22809E415CECB270067F356 /* iTunesArtwork in Resources */,
 				E2280B2215CECB280067F356 /* ChangeLog in Resources */,
 				E2280BE515CECB290067F356 /* blocks.png in Resources */,
+				E233849C15D25553001C1A76 /* rope.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1385,6 +1444,12 @@
 				E233847D15D11C2F001C1A76 /* PolygonSprite.mm in Sources */,
 				E233848415D140E0001C1A76 /* Vector3.m in Sources */,
 				E233848715D14C86001C1A76 /* triangulate.cpp in Sources */,
+				E233848F15D22EAB001C1A76 /* Player.mm in Sources */,
+				E233849215D22EBC001C1A76 /* AnchorPoint.mm in Sources */,
+				E233849D15D25553001C1A76 /* VPoint.m in Sources */,
+				E233849E15D25553001C1A76 /* VRope.mm in Sources */,
+				E233849F15D25553001C1A76 /* VStick.m in Sources */,
+				E23384A215D26EC0001C1A76 /* RopeManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
