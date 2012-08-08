@@ -11,6 +11,8 @@
 
 @implementation PlayerManager
 
+@synthesize player = _player;
+
 -(id) initWithWorld:(b2World *)world
 {
     if (self = [super init] ) {

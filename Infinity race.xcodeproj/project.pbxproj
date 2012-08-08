@@ -192,6 +192,7 @@
 		E233849F15D25553001C1A76 /* VStick.m in Sources */ = {isa = PBXBuildFile; fileRef = E233849B15D25553001C1A76 /* VStick.m */; };
 		E23384A215D26EC0001C1A76 /* Rope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A115D26EC0001C1A76 /* Rope.mm */; };
 		E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A415D29466001C1A76 /* PlayerManager.mm */; };
+		E2416EDB15D2A3F800D6A6E0 /* LevelManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -577,6 +578,8 @@
 		E23384A115D26EC0001C1A76 /* Rope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Rope.mm; path = "Infinity race/Rope.mm"; sourceTree = "<group>"; };
 		E23384A315D29466001C1A76 /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
 		E23384A415D29466001C1A76 /* PlayerManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerManager.mm; sourceTree = "<group>"; };
+		E2416ED915D2A3F700D6A6E0 /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
+		E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1202,6 +1205,8 @@
 			children = (
 				E23384A315D29466001C1A76 /* PlayerManager.h */,
 				E23384A415D29466001C1A76 /* PlayerManager.mm */,
+				E2416ED915D2A3F700D6A6E0 /* LevelManager.h */,
+				E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */,
 			);
 			name = "World Objects Managers";
 			path = "Infinity race";
@@ -1456,6 +1461,7 @@
 				E233849F15D25553001C1A76 /* VStick.m in Sources */,
 				E23384A215D26EC0001C1A76 /* Rope.mm in Sources */,
 				E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */,
+				E2416EDB15D2A3F800D6A6E0 /* LevelManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,23 +58,8 @@ enum {
 		// init physics
 		[self initPhysics];
         
-        _player = [[Player alloc] initWithWorld: world];
-        [_player activateCollisions];
-        [self addChild:_player];
-        
-        _anchorPoint = [[AnchorPoint alloc] initWithWorld:world];
-        [_anchorPoint activateCollisions];
-        [self addChild:_anchorPoint];
-        
-        _anchorPoint1 = [[AnchorPoint alloc] initWithWorld:world];
-        [_anchorPoint1 activateCollisions];
-        CGSize screen = [[CCDirector sharedDirector] winSize];
-        _anchorPoint1.body->SetTransform(b2Vec2(screen.width/3.2/PTM_RATIO,screen.height/3.4/PTM_RATIO), 0);
-     //   [_anchorPoint1 setPosition:ccp(screen.width/1.6/PTM_RATIO,screen.height/1.2/PTM_RATIO)];
-        [self addChild:_anchorPoint1];
-        
-        _rope = [[Rope alloc] initWithFile:@"rope.png" andWorld:world];
-        [self addChild:_rope];
+        _levelManager = [[LevelManager alloc] initWithWorld:world];
+        [self addChild:_levelManager];
         
    /*     [self createRopeWithBodyA:_player.body anchorA:_player.body->GetLocalCenter()
                             bodyB:_anchorPoint.body anchorB:_anchorPoint.body->GetLocalCenter()
@@ -301,11 +286,12 @@ enum {
         }
     }
     
-    [_rope update:dt];
+    [_levelManager update:dt];
+
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [_rope createRopeWithBodyA:_player.body anchorA:_player.body->GetLocalCenter()
+    [_rope createRopeWithBodyA:_playerManager.pl.body anchorA:_player.body->GetLocalCenter()
                          bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
                           sag:1.1];
 }
