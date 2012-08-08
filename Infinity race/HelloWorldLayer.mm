@@ -73,7 +73,7 @@ enum {
      //   [_anchorPoint1 setPosition:ccp(screen.width/1.6/PTM_RATIO,screen.height/1.2/PTM_RATIO)];
         [self addChild:_anchorPoint1];
         
-        _rope = [[RopeManager alloc] initWithFile:@"rope.png" andWorld:world];
+        _rope = [[Rope alloc] initWithFile:@"rope.png" andWorld:world];
         [self addChild:_rope];
         
    /*     [self createRopeWithBodyA:_player.body anchorA:_player.body->GetLocalCenter()

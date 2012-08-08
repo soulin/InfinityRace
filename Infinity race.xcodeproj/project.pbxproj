@@ -190,7 +190,8 @@
 		E233849D15D25553001C1A76 /* VPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E233849715D25553001C1A76 /* VPoint.m */; };
 		E233849E15D25553001C1A76 /* VRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E233849915D25553001C1A76 /* VRope.mm */; };
 		E233849F15D25553001C1A76 /* VStick.m in Sources */ = {isa = PBXBuildFile; fileRef = E233849B15D25553001C1A76 /* VStick.m */; };
-		E23384A215D26EC0001C1A76 /* RopeManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A115D26EC0001C1A76 /* RopeManager.mm */; };
+		E23384A215D26EC0001C1A76 /* Rope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A115D26EC0001C1A76 /* Rope.mm */; };
+		E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A415D29466001C1A76 /* PlayerManager.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -572,8 +573,10 @@
 		E233849915D25553001C1A76 /* VRope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VRope.mm; sourceTree = "<group>"; };
 		E233849A15D25553001C1A76 /* VStick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VStick.h; sourceTree = "<group>"; };
 		E233849B15D25553001C1A76 /* VStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VStick.m; sourceTree = "<group>"; };
-		E23384A015D26EC0001C1A76 /* RopeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RopeManager.h; sourceTree = "<group>"; };
-		E23384A115D26EC0001C1A76 /* RopeManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RopeManager.mm; sourceTree = "<group>"; };
+		E23384A015D26EC0001C1A76 /* Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rope.h; path = "Infinity race/Rope.h"; sourceTree = "<group>"; };
+		E23384A115D26EC0001C1A76 /* Rope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Rope.mm; path = "Infinity race/Rope.mm"; sourceTree = "<group>"; };
+		E23384A315D29466001C1A76 /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		E23384A415D29466001C1A76 /* PlayerManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1184,6 +1187,8 @@
 		E233848C15D22E87001C1A76 /* World Objects */ = {
 			isa = PBXGroup;
 			children = (
+				E23384A015D26EC0001C1A76 /* Rope.h */,
+				E23384A115D26EC0001C1A76 /* Rope.mm */,
 				E233848D15D22EAB001C1A76 /* Player.h */,
 				E233848E15D22EAB001C1A76 /* Player.mm */,
 				E233849015D22EBC001C1A76 /* AnchorPoint.h */,
@@ -1195,8 +1200,8 @@
 		E233849315D23983001C1A76 /* World Objects Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E23384A015D26EC0001C1A76 /* RopeManager.h */,
-				E23384A115D26EC0001C1A76 /* RopeManager.mm */,
+				E23384A315D29466001C1A76 /* PlayerManager.h */,
+				E23384A415D29466001C1A76 /* PlayerManager.mm */,
 			);
 			name = "World Objects Managers";
 			path = "Infinity race";
@@ -1449,7 +1454,8 @@
 				E233849D15D25553001C1A76 /* VPoint.m in Sources */,
 				E233849E15D25553001C1A76 /* VRope.mm in Sources */,
 				E233849F15D25553001C1A76 /* VStick.m in Sources */,
-				E23384A215D26EC0001C1A76 /* RopeManager.mm in Sources */,
+				E23384A215D26EC0001C1A76 /* Rope.mm in Sources */,
+				E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

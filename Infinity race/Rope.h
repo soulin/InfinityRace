@@ -10,7 +10,7 @@
 #import "box2d.h"
 #import "cocos2d.h"
 
-@interface RopeManager : CCNode {
+@interface Rope : CCNode {
     NSMutableArray *_ropes;
     CCSpriteBatchNode *_ropeSpriteSheet;
     

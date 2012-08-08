@@ -6,11 +6,11 @@
 //
 //
 
-#import "RopeManager.h"
+#import "Rope.h"
 
 #import "VRope.h"
 
-@implementation RopeManager
+@implementation Rope
 
 -(id) initWithFile:(NSString *) file andWorld:(b2World *) world{
     self = [super init];
