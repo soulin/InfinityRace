@@ -19,4 +19,7 @@
 @property (readwrite, assign) float y;
 @property (readwrite, assign) float z;
 
++(id) x:(float)iX y:(float)iY z:(float)iZ;
+-(id) x:(float)iX y:(float)iY z:(float)iZ;
+
 @end

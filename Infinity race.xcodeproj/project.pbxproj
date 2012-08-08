@@ -181,8 +181,7 @@
 		E2280BE015CECB290067F356 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2280BDF15CECB290067F356 /* GLES-Render.mm */; };
 		E2280BE315CECB290067F356 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2280BE215CECB290067F356 /* PhysicsSprite.mm */; };
 		E2280BE515CECB290067F356 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = E2280BE415CECB290067F356 /* blocks.png */; };
-		E233847D15D11C2F001C1A76 /* PolygonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = E233847C15D11C2F001C1A76 /* PolygonSprite.m */; };
-		E233848115D13D5A001C1A76 /* Triangulation.m in Sources */ = {isa = PBXBuildFile; fileRef = E233848015D13D5A001C1A76 /* Triangulation.m */; };
+		E233847D15D11C2F001C1A76 /* PolygonSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = E233847C15D11C2F001C1A76 /* PolygonSprite.mm */; };
 		E233848415D140E0001C1A76 /* Vector3.m in Sources */ = {isa = PBXBuildFile; fileRef = E233848315D140E0001C1A76 /* Vector3.m */; };
 		E233848715D14C86001C1A76 /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E233848515D14C86001C1A76 /* triangulate.cpp */; };
 /* End PBXBuildFile section */
@@ -550,9 +549,7 @@
 		E2280BE215CECB290067F356 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
 		E2280BE415CECB290067F356 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 		E233847B15D11C2F001C1A76 /* PolygonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonSprite.h; sourceTree = "<group>"; };
-		E233847C15D11C2F001C1A76 /* PolygonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolygonSprite.m; sourceTree = "<group>"; };
-		E233847F15D13D5A001C1A76 /* Triangulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangulation.h; sourceTree = "<group>"; };
-		E233848015D13D5A001C1A76 /* Triangulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangulation.m; sourceTree = "<group>"; };
+		E233847C15D11C2F001C1A76 /* PolygonSprite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PolygonSprite.mm; sourceTree = "<group>"; };
 		E233848215D140E0001C1A76 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
 		E233848315D140E0001C1A76 /* Vector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector3.m; sourceTree = "<group>"; };
 		E233848515D14C86001C1A76 /* triangulate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = triangulate.cpp; sourceTree = "<group>"; };
@@ -629,11 +626,9 @@
 				E22809E515CECB270067F356 /* libs */,
 				E2280BD115CECB290067F356 /* Supporting Files */,
 				E233847B15D11C2F001C1A76 /* PolygonSprite.h */,
-				E233847C15D11C2F001C1A76 /* PolygonSprite.m */,
+				E233847C15D11C2F001C1A76 /* PolygonSprite.mm */,
 				E233848515D14C86001C1A76 /* triangulate.cpp */,
 				E233848615D14C86001C1A76 /* triangulate.h */,
-				E233847F15D13D5A001C1A76 /* Triangulation.h */,
-				E233848015D13D5A001C1A76 /* Triangulation.m */,
 				E233848215D140E0001C1A76 /* Vector3.h */,
 				E233848315D140E0001C1A76 /* Vector3.m */,
 			);
@@ -1387,8 +1382,7 @@
 				E2280BDD15CECB290067F356 /* IntroLayer.mm in Sources */,
 				E2280BE015CECB290067F356 /* GLES-Render.mm in Sources */,
 				E2280BE315CECB290067F356 /* PhysicsSprite.mm in Sources */,
-				E233847D15D11C2F001C1A76 /* PolygonSprite.m in Sources */,
-				E233848115D13D5A001C1A76 /* Triangulation.m in Sources */,
+				E233847D15D11C2F001C1A76 /* PolygonSprite.mm in Sources */,
 				E233848415D140E0001C1A76 /* Vector3.m in Sources */,
 				E233848715D14C86001C1A76 /* triangulate.cpp in Sources */,
 			);
