@@ -193,6 +193,7 @@
 		E23384A215D26EC0001C1A76 /* Rope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A115D26EC0001C1A76 /* Rope.mm */; };
 		E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A415D29466001C1A76 /* PlayerManager.mm */; };
 		E2416EDB15D2A3F800D6A6E0 /* LevelManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */; };
+		E2B900C115D7A6F30067D8E5 /* tdRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2B900C015D7A6F30067D8E5 /* tdRope.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -580,6 +581,8 @@
 		E23384A415D29466001C1A76 /* PlayerManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerManager.mm; sourceTree = "<group>"; };
 		E2416ED915D2A3F700D6A6E0 /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
 		E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelManager.mm; sourceTree = "<group>"; };
+		E2B900BF15D7A6F30067D8E5 /* tdRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdRope.h; sourceTree = "<group>"; };
+		E2B900C015D7A6F30067D8E5 /* tdRope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tdRope.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +608,7 @@
 		E22809A915CECB260067F356 = {
 			isa = PBXGroup;
 			children = (
+				E2B900BD15D7A6A00067D8E5 /* TipsyDog Rope */,
 				E233847B15D11C2F001C1A76 /* PolygonSprite.h */,
 				E233847C15D11C2F001C1A76 /* PolygonSprite.mm */,
 				E233849315D23983001C1A76 /* World Objects Managers */,
@@ -1225,6 +1229,15 @@
 			path = "vrope-latest";
 			sourceTree = "<group>";
 		};
+		E2B900BD15D7A6A00067D8E5 /* TipsyDog Rope */ = {
+			isa = PBXGroup;
+			children = (
+				E2B900BF15D7A6F30067D8E5 /* tdRope.h */,
+				E2B900C015D7A6F30067D8E5 /* tdRope.mm */,
+			);
+			name = "TipsyDog Rope";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1462,6 +1475,7 @@
 				E23384A215D26EC0001C1A76 /* Rope.mm in Sources */,
 				E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */,
 				E2416EDB15D2A3F800D6A6E0 /* LevelManager.mm in Sources */,
+				E2B900C115D7A6F30067D8E5 /* tdRope.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

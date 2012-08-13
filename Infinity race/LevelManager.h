@@ -7,11 +7,11 @@
 //
 
 #import "cocos2d.h"
-#import "CCLayer.h"
 #import "box2d.h"
 #import "PlayerManager.h"
 #import "Rope.h"
 #import "AnchorPoint.h"
+#import "tdRope.h"
 
 @interface LevelManager : CCLayer {
     PlayerManager *_playerManager;
@@ -19,6 +19,9 @@
     AnchorPoint *_anchorPoint1;
     
     Rope *_rope;
+    tdRope *_tdRope;
+    BOOL ropeCreated;
+    
 }
 
 -(id) initWithWorld:(b2World *)world;

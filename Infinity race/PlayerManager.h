@@ -7,7 +7,7 @@
 //
 
 #import "cocos2d.h"
-#import "Box2D.h"
+#import "box2d.h"
 #import "Player.h"
 
 
@@ -15,6 +15,8 @@
     b2World *_world;
     Player *_player;
 }
+
+@property (assign, readwrite) Player *player;
 
 -(id) initWithWorld:(b2World *)world;
 

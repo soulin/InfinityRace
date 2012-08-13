@@ -169,10 +169,10 @@ enum {
 	
 	uint32 flags = 0;
 	flags += b2Draw::e_shapeBit;
-	//		flags += b2Draw::e_jointBit;
+			flags += b2Draw::e_jointBit;
 	//		flags += b2Draw::e_aabbBit;
 	//		flags += b2Draw::e_pairBit;
-	//		flags += b2Draw::e_centerOfMassBit;
+			flags += b2Draw::e_centerOfMassBit;
 	m_debugDraw->SetFlags(flags);		
 	
 	/*
@@ -291,6 +291,7 @@ enum {
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
 //    [_rope createRopeWithBodyA:_playerManager.pl.body anchorA:_player.body->GetLocalCenter()
 //                         bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
 //                          sag:1.1];

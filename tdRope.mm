@@ -1,27 +1,20 @@
 //
-//  RopeManager.m
+//  tdRope.m
 //  Infinity race
 //
-//  Created by Maxim Cherkasov on 08.08.12.
+//  Created by Maxim Cherkasov on 12.08.12.
 //
 //
 
-#import "Rope.h"
+#import "tdRope.h"
 
-#import "VRope.h"
+@implementation tdRope
 
-@implementation Rope
-
--(id) initWithFile:(NSString *) file andWorld:(b2World *) world{
-    self = [super init];
-     
-    _ropes = [[NSMutableArray alloc] init];
-    _ropeSpriteSheet = [CCSpriteBatchNode batchNodeWithFile:file];
-    [self addChild:_ropeSpriteSheet];
-    
-    _world = world;
-    
-
+-(id) initWithWorld:(b2World *) world {
+        
+    if (self = [super init]) {
+        _world = world;
+    }
     
     return self;
 }
@@ -35,32 +28,28 @@
     jd.bodyB = bodyB;
     jd.localAnchorA = anchorA;
     jd.localAnchorB = anchorB;
-   // jd.collideConnected = YES;
+
     
     // Max length of joint = current distance between bodies * sag
     float32 ropeLength = (bodyA->GetWorldPoint(anchorA) - bodyB->GetWorldPoint(anchorB)).Length() * sag;
     jd.maxLength = ropeLength;
     
     // Create joint
-    b2RopeJoint *ropeJoint = (b2RopeJoint *)_world->CreateJoint(&jd);
+    _ropeJoint = (b2RopeJoint *)_world->CreateJoint(&jd);
     
+    /*
     VRope *newRope = [[VRope alloc] initWithRopeJoint:ropeJoint spriteSheet:_ropeSpriteSheet];
     
     [_ropes addObject:newRope];
     [newRope release];
+     */
 }
 
-- (void) update:(ccTime) dt {
-    // Update all the ropes
-    for (VRope *rope in _ropes)
-    {
-        [rope update:dt];
-        [rope updateSprites];
-    }
+-(void) destroyRope {
+    _world->DestroyJoint(_ropeJoint);
 }
 
 -(void) dealloc {
-    [_ropes release];
     [super dealloc];
 }
 
