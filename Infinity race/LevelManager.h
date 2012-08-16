@@ -15,6 +15,8 @@
 
 @interface LevelManager : CCLayer {
     PlayerManager *_playerManager;
+    NSMutableArray *_anchorPoints;
+    
     AnchorPoint *_anchorPoint;
     AnchorPoint *_anchorPoint1;
     

@@ -30,6 +30,7 @@
 -(b2Body*)createStaticBodyForWorld:(b2World*)world position:(b2Vec2)position rotation:(float)rotation vertices:(b2Vec2*)vertices vertexCount:(int32)count density:(float)density friction:(float)friction restitution:(float)restitution;
 -(void)activateCollisions;
 -(void)deactivateCollisions;
+-(CGPoint) getPosition;
 //-(void)setPosition:(CGPoint) position;
 
 @end

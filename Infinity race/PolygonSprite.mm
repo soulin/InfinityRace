@@ -117,6 +117,12 @@
     fixture->SetFilterData(filter);
 }
 
+-(CGPoint) getPosition
+{
+    b2Vec2 position = _body->GetPosition();
+    return ccp(position.x*PTM_RATIO, position.y*PTM_RATIO);
+}
+
 //-(void)setPosition:(CGPoint) position {
 //    [super setPosition:position];
 //    _body->SetTransform(b2Vec2(position.x, position.y), 0);
