@@ -11,9 +11,12 @@
 #import "Player.h"
 
 
-@interface PlayerManager : CCNode <CCTargetedTouchDelegate> {
+@interface PlayerManager : CCLayer {//CCNode <CCTargetedTouchDelegate> {
     b2World *_world;
     Player *_player;
+
+@private
+    BOOL isAccelerate;
 }
 
 @property (assign, readwrite) Player *player;
