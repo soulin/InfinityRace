@@ -36,7 +36,7 @@
 }
 
 - (void) acceleration:(ccTime) dt {
-    CCLOG(@"Player up!!\n");
+
     _player.body->ApplyForceToCenter(b2Vec2(0.0, 50.0f));
 }
 
