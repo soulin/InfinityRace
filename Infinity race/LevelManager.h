@@ -12,6 +12,8 @@
 #import "Rope.h"
 #import "AnchorPoint.h"
 #import "tdRope.h"
+#import "tsControlButton.h"
+#import "tsControlSpriteButton.h"
 
 @interface LevelManager : CCLayer {
     PlayerManager *_playerManager;
@@ -23,6 +25,9 @@
     Rope *_rope;
     tdRope *_tdRope;
     BOOL ropeCreated;
+    
+    tsControlSpriteButton *_button;
+    tsControlButton *_rightButton;
     
 }
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "box2d.h"
+#import "GLES-Render.h"
 
 #define PTM_RATIO 32
 

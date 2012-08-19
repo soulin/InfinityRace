@@ -41,6 +41,15 @@
         
         [self scheduleUpdate];
         
+        _button = [[tsControlSpriteButton alloc] init];
+        _button.position = CGPointMake(screen.width, 100);
+        [_button.button setRadius:100.0f];
+        _button.button = [[tsControlButton alloc] initWithRect:CGRectMake(0, 0, 100, 100)];
+        _button.defaultSprite = [CCSprite spriteWithFile:@"button-close.png"];
+        _rightButton = [_button.button retain];
+        _button.defaultSprite.visible = YES;
+        [self addChild:_button];
+        
         self.isTouchEnabled = YES;
         ropeCreated = NO;
     }
@@ -66,7 +75,7 @@
  /*   [_rope createRopeWithBodyA:_playerManager.player.body anchorA:_playerManager.player.body->GetLocalCenter()
                          bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
                          sag:1.1];
-  */
+  *
     CGPoint playerPosition = [_playerManager.player getPosition];
     CCLOG(@"Player position: (%f, %f)\n", playerPosition.x, playerPosition.y);
     int count = 0;
@@ -90,6 +99,7 @@
         }
 
     }
+  */
 }
 
 @end

@@ -80,6 +80,7 @@
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
     bodyDef.angle = rotation;
+    bodyDef.fixedRotation = NO;
     b2Body *body = world->CreateBody(&bodyDef);
     
     b2FixtureDef fixtureDef;
@@ -122,6 +123,20 @@
     b2Vec2 position = _body->GetPosition();
     return ccp(position.x*PTM_RATIO, position.y*PTM_RATIO);
 }
+
+-(void)draw
+{
+    glEnable(GL_BLEND);
+    // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    // glCo;
+    
+    //    ccDrawCircle(mySprite.position, attackRange, 360, 30, false);
+    b2Vec2 position = _body->GetPosition();
+    
+    ccDrawCircle(ccp(position.x, position.y), 20, 360, 30, false);
+    
+}
+
 
 //-(void)setPosition:(CGPoint) position {
 //    [super setPosition:position];

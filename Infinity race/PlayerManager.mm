@@ -23,6 +23,7 @@
         b2Vec2 centerVec = _player.body->GetLocalCenter();
         
         _player.body->SetTransform(b2Vec2((screen.width-(centerVec.x*PTM_RATIO/2))/2/PTM_RATIO,10/PTM_RATIO), 0);
+        _player.body->SetFixedRotation(YES);
                                  
         [_player activateCollisions];
         

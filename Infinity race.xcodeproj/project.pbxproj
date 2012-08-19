@@ -193,6 +193,9 @@
 		E23384A215D26EC0001C1A76 /* Rope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A115D26EC0001C1A76 /* Rope.mm */; };
 		E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E23384A415D29466001C1A76 /* PlayerManager.mm */; };
 		E2416EDB15D2A3F800D6A6E0 /* LevelManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */; };
+		E28688D715DFE20C00B65320 /* tsControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E28688D615DFE20C00B65320 /* tsControlButton.m */; };
+		E28688DA15E1568700B65320 /* tsControlSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E28688D915E1568700B65320 /* tsControlSpriteButton.m */; };
+		E28688DE15E159CE00B65320 /* button-close-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E28688DD15E159CE00B65320 /* button-close-hd.png */; };
 		E2B900C115D7A6F30067D8E5 /* tdRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2B900C015D7A6F30067D8E5 /* tdRope.mm */; };
 /* End PBXBuildFile section */
 
@@ -581,6 +584,11 @@
 		E23384A415D29466001C1A76 /* PlayerManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerManager.mm; sourceTree = "<group>"; };
 		E2416ED915D2A3F700D6A6E0 /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
 		E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelManager.mm; sourceTree = "<group>"; };
+		E28688D515DFE20C00B65320 /* tsControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsControlButton.h; sourceTree = "<group>"; };
+		E28688D615DFE20C00B65320 /* tsControlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tsControlButton.m; sourceTree = "<group>"; };
+		E28688D815E1568700B65320 /* tsControlSpriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsControlSpriteButton.h; sourceTree = "<group>"; };
+		E28688D915E1568700B65320 /* tsControlSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tsControlSpriteButton.m; sourceTree = "<group>"; };
+		E28688DD15E159CE00B65320 /* button-close-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close-hd.png"; sourceTree = "<group>"; };
 		E2B900BF15D7A6F30067D8E5 /* tdRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdRope.h; sourceTree = "<group>"; };
 		E2B900C015D7A6F30067D8E5 /* tdRope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tdRope.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -608,6 +616,7 @@
 		E22809A915CECB260067F356 = {
 			isa = PBXGroup;
 			children = (
+				E28688D315DFE07300B65320 /* Player Control */,
 				E2B900BD15D7A6A00067D8E5 /* TipsyDog Rope */,
 				E233847B15D11C2F001C1A76 /* PolygonSprite.h */,
 				E233847C15D11C2F001C1A76 /* PolygonSprite.mm */,
@@ -671,6 +680,7 @@
 		E22809CB15CECB260067F356 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E28688DD15E159CE00B65320 /* button-close-hd.png */,
 				E233849515D25553001C1A76 /* rope.png */,
 				E22809CC15CECB260067F356 /* Default.png */,
 				E22809CE15CECB260067F356 /* Default-Landscape~ipad.png */,
@@ -1229,6 +1239,17 @@
 			path = "vrope-latest";
 			sourceTree = "<group>";
 		};
+		E28688D315DFE07300B65320 /* Player Control */ = {
+			isa = PBXGroup;
+			children = (
+				E28688D515DFE20C00B65320 /* tsControlButton.h */,
+				E28688D615DFE20C00B65320 /* tsControlButton.m */,
+				E28688D815E1568700B65320 /* tsControlSpriteButton.h */,
+				E28688D915E1568700B65320 /* tsControlSpriteButton.m */,
+			);
+			name = "Player Control";
+			sourceTree = "<group>";
+		};
 		E2B900BD15D7A6A00067D8E5 /* TipsyDog Rope */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,6 +1324,7 @@
 				E2280B2215CECB280067F356 /* ChangeLog in Resources */,
 				E2280BE515CECB290067F356 /* blocks.png in Resources */,
 				E233849C15D25553001C1A76 /* rope.png in Resources */,
+				E28688DE15E159CE00B65320 /* button-close-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,6 +1498,8 @@
 				E23384A515D29466001C1A76 /* PlayerManager.mm in Sources */,
 				E2416EDB15D2A3F800D6A6E0 /* LevelManager.mm in Sources */,
 				E2B900C115D7A6F30067D8E5 /* tdRope.mm in Sources */,
+				E28688D715DFE20C00B65320 /* tsControlButton.m in Sources */,
+				E28688DA15E1568700B65320 /* tsControlSpriteButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
