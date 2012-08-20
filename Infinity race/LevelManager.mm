@@ -42,9 +42,9 @@
         [self scheduleUpdate];
         
         _button = [[tsControlSpriteButton alloc] init];
-        _button.position = CGPointMake(screen.width, 100);
-        [_button.button setRadius:100.0f];
-        _button.button = [[tsControlButton alloc] initWithRect:CGRectMake(0, 0, 100, 100)];
+        _button.position = CGPointMake(screen.width, 32);
+        _button.button = [[tsControlButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)];
+        _button.button.radius = 32.0f;
         _button.defaultSprite = [CCSprite spriteWithFile:@"button-close.png"];
         _rightButton = [_button.button retain];
         _button.defaultSprite.visible = YES;

@@ -127,13 +127,15 @@
 -(void)draw
 {
     glEnable(GL_BLEND);
-    // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     // glCo;
     
     //    ccDrawCircle(mySprite.position, attackRange, 360, 30, false);
     b2Vec2 position = _body->GetPosition();
     
     ccDrawCircle(ccp(position.x, position.y), 20, 360, 30, false);
+    
+    [super draw];
     
 }
 

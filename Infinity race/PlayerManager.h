@@ -17,6 +17,7 @@
 
 @private
     BOOL isAccelerate;
+    CGPoint _touchCurrent, _touchPrevious;
 }
 
 @property (assign, readwrite) Player *player;

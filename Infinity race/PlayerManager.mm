@@ -38,7 +38,7 @@
 
 - (void) acceleration:(ccTime) dt {
 
-    _player.body->ApplyForceToCenter(b2Vec2(0.0, 50.0f));
+    _player.body->ApplyForceToCenter(b2Vec2(0.0, 250.0f));
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -46,8 +46,9 @@
     if (isAccelerate == NO) {
         isAccelerate = YES;
         
-        [self schedule:@selector(acceleration:) interval:0.5];
+        [self schedule:@selector(acceleration:)];
         
+         _touchPrevious = _touchCurrent = [touch locationInView:[touch view]];
     }
     return YES;
 }
