@@ -10,6 +10,11 @@
 #import "box2d.h"
 #import "Player.h"
 
+enum {
+    DIRECTION_NONE = 0,
+    DIRECTION_LEFT,
+    DIRECTION_RIGHT
+};
 
 @interface PlayerManager : CCLayer {//CCNode <CCTargetedTouchDelegate> {
     b2World *_world;
@@ -17,7 +22,11 @@
 
 @private
     BOOL isAccelerate;
-    CGPoint _touchCurrent, _touchPrevious;
+    CGPoint _touchCurrent, _touchPrevious;    
+    int _playerShiftDirection;
+    float _touchShiftDistance;
+    
+    float _currentPlayerAngle;
 }
 
 @property (assign, readwrite) Player *player;

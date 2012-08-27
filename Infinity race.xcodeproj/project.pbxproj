@@ -197,6 +197,7 @@
 		E28688DA15E1568700B65320 /* tsControlSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E28688D915E1568700B65320 /* tsControlSpriteButton.m */; };
 		E28688DE15E159CE00B65320 /* button-close-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E28688DD15E159CE00B65320 /* button-close-hd.png */; };
 		E2B900C115D7A6F30067D8E5 /* tdRope.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2B900C015D7A6F30067D8E5 /* tdRope.mm */; };
+		E2D2EA0C15E5F8B4007BFE2C /* SceneManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2D2EA0B15E5F8B4007BFE2C /* SceneManager.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -591,6 +592,8 @@
 		E28688DD15E159CE00B65320 /* button-close-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close-hd.png"; sourceTree = "<group>"; };
 		E2B900BF15D7A6F30067D8E5 /* tdRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tdRope.h; sourceTree = "<group>"; };
 		E2B900C015D7A6F30067D8E5 /* tdRope.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tdRope.mm; sourceTree = "<group>"; };
+		E2D2EA0A15E5F8B4007BFE2C /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
+		E2D2EA0B15E5F8B4007BFE2C /* SceneManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1221,6 +1224,8 @@
 				E23384A415D29466001C1A76 /* PlayerManager.mm */,
 				E2416ED915D2A3F700D6A6E0 /* LevelManager.h */,
 				E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */,
+				E2D2EA0A15E5F8B4007BFE2C /* SceneManager.h */,
+				E2D2EA0B15E5F8B4007BFE2C /* SceneManager.mm */,
 			);
 			name = "World Objects Managers";
 			path = "Infinity race";
@@ -1500,6 +1505,7 @@
 				E2B900C115D7A6F30067D8E5 /* tdRope.mm in Sources */,
 				E28688D715DFE20C00B65320 /* tsControlButton.m in Sources */,
 				E28688DA15E1568700B65320 /* tsControlSpriteButton.m in Sources */,
+				E2D2EA0C15E5F8B4007BFE2C /* SceneManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
