@@ -65,6 +65,15 @@
 
 -(void) update:(ccTime) dt
 {
+    if (_rightButton.status == BUTTON_STATE_CLICKED) {
+        _rightButton.status = BUTTON_STATE_NONE;
+        float angle = _playerManager.player.body->GetAngle();
+        CGSize screen = [[CCDirector sharedDirector] winSize];
+        b2Vec2 centerVec = _playerManager.player.body->GetLocalCenter();
+
+        
+        _playerManager.player.body->SetTransform(b2Vec2((screen.width-(centerVec.x*PTM_RATIO/2))/2/PTM_RATIO,100/PTM_RATIO),angle);
+    }
 
     //ccpDistance
     [_rope update:dt];

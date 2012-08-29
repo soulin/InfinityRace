@@ -10,7 +10,7 @@
 
 @implementation tsControlButton
 
-@synthesize active = _active;
+@synthesize status = _status;
 @synthesize radius = _radius;
 
 
@@ -44,7 +44,8 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 
-    if (_active) return NO;
+    _status = BUTTON_STATE_PRESSED;
+ //   if (_active) return NO;
     
     CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
 	location = [self convertToNodeSpace:location];
@@ -54,6 +55,7 @@
         return NO;
     else {
         CCLOG(@"Finger position x = %f y = %f\n", location.x, location.y);
+        return YES;
     }
     
     return NO;
@@ -65,7 +67,7 @@
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    _active = NO;
+    _status = BUTTON_STATE_CLICKED;
 }
 
 - (void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event

@@ -9,16 +9,22 @@
 #import "CCNode.h"
 #import "cocos2d.h"
 
+enum {
+    BUTTON_STATE_NONE = 0,
+    BUTTON_STATE_CLICKED,
+    BUTTON_STATE_PRESSED
+};
+
 @interface tsControlButton : CCNode <CCTargetedTouchDelegate> {
     CGPoint _center;
     CGRect _bounds;
     
     float _radius;
     
-    BOOL _active;
+    int _status;
 }
 
-@property (nonatomic, readonly) BOOL active;
+@property (nonatomic, assign) int status;
 @property (nonatomic, assign) float radius;
 
 -(id) initWithRect:(CGRect) rect;

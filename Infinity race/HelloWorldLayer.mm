@@ -19,7 +19,6 @@ enum {
 	kTagParentNode = 1,
 };
 
-
 #pragma mark - HelloWorldLayer
 
 @interface HelloWorldLayer()

@@ -53,27 +53,31 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    if (isAccelerate == NO) {
-        isAccelerate = YES;
+
         
        // [self schedule:@selector(acceleration:)];
         
         _touchPrevious = _touchCurrent = [touch locationInView:[touch view]];
         _currentPlayerAngle = _player.body->GetAngle();
-    }
+//    }
     return YES;
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    if (isAccelerate == NO) 
+        isAccelerate = YES;
+    
     _touchCurrent = [touch locationInView:[touch view]];
     CGPoint deltaPosition = ccpSub(_touchCurrent, _touchPrevious); //CGPointMake((_touchCurrent.x - _touchPrevious.x), (_touchCurrent.y-_touchPrevious.y));
     float deltaDistance = sqrt(deltaPosition.x*deltaPosition.x + deltaPosition.y*deltaPosition.y);
     
     deltaPosition = ccpNormalize(deltaPosition);
     
-    if (fabs(_touchShiftDistance) < 15.0f)
-        _touchShiftDistance += (int)deltaPosition.x*deltaDistance;
+    _touchShiftDistance += (int)deltaPosition.x*(deltaDistance);
+    if (fabs(_touchShiftDistance) > 45.0f)
+        _touchShiftDistance = _playerShiftDirection == DIRECTION_RIGHT ? 45.0f:-45.0f;
+
     //else
    //     _touchShiftDistance = 15.0;
 //    float ditanceDelta = distance - _currentDeltaPosition;
@@ -127,17 +131,17 @@
             if (_touchShiftDistance < 0)
                 _touchShiftDistance = 0.0f;
             else
-                _touchShiftDistance -= 0.5f;
+                _touchShiftDistance -= 2.0f;
         } else
         if ( _playerShiftDirection == DIRECTION_LEFT) {
             if (_touchShiftDistance > 0)
                 _touchShiftDistance = 0.0f;
             else
-                _touchShiftDistance += 0.5f;
+                _touchShiftDistance += 2.0f;
         }
 
     }
-    b2Vec2 force = b2Vec2(_touchShiftDistance/10, 0.5f);
+    b2Vec2 force = b2Vec2(_touchShiftDistance/10, 5.5f);
     _player.body->SetLinearVelocity(force);
 }
 
