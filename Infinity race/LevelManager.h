@@ -15,23 +15,27 @@
 #import "tsControlButton.h"
 #import "tsControlSpriteButton.h"
 
+@class AsteroidManager;
+
 @interface LevelManager : CCLayer {
-    PlayerManager *_playerManager;
-    NSMutableArray *_anchorPoints;
     
-    AnchorPoint *_anchorPoint;
-    AnchorPoint *_anchorPoint1;
-    
-    Rope *_rope;
-    tdRope *_tdRope;
-    BOOL ropeCreated;
-    
-    tsControlSpriteButton *_button;
-    tsControlButton *_rightButton;
-    
+    AsteroidManager *_asteroidManager;
+//    PlayerManager *_playerManager;
+//    NSMutableArray *_anchorPoints;
+//    
+//    AnchorPoint *_anchorPoint;
+//    AnchorPoint *_anchorPoint1;
+//    
+//    Rope *_rope;
+//    tdRope *_tdRope;
+//    BOOL ropeCreated;
+//    
+//    tsControlSpriteButton *_button;
+//    tsControlButton *_rightButton;
+//    
 }
 
 -(id) initWithWorld:(b2World *)world;
--(void) update:(ccTime) dt;
+//-(void) update:(ccTime) dt;
 
 @end

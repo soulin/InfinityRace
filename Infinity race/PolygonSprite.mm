@@ -95,12 +95,11 @@
     shape.Set(vertices, count);
     fixtureDef.shape = &shape;
     body->CreateFixture(&fixtureDef);
-  //  body->SetAwake(NO);
     
     return body;
 }
 
--(void)activateCollisions
+-(void)activatePolygonCollisions
 {
     b2Fixture *fixture = _body->GetFixtureList();
     b2Filter filter = fixture->GetFilterData();
@@ -109,7 +108,7 @@
     fixture->SetFilterData(filter);
 }
 
--(void)deactivateCollisions
+-(void)deactivatePolygonCollisions
 {
     b2Fixture *fixture = _body->GetFixtureList();
     b2Filter filter = fixture->GetFilterData();
@@ -118,31 +117,116 @@
     fixture->SetFilterData(filter);
 }
 
--(CGPoint) getPosition
-{
-    b2Vec2 position = _body->GetPosition();
-    return ccp(position.x*PTM_RATIO, position.y*PTM_RATIO);
+-(void) setPolygonPosition:(CGPoint)position {
+    _body->SetTransform(b2Vec2(position.x/PTM_RATIO,position.y/PTM_RATIO),0.0f);
+}
+
+-(CGPoint) getPolygonPosition {
+    b2Vec2 pos = _body->GetPosition();
+    return ccp(pos.x*PTM_RATIO, pos.y*PTM_RATIO);
+}
+
+-(void) setPolygonDensity:(float32) density {
+    b2Fixture *fixture = _body->GetFixtureList();
+    fixture->SetDensity(density);
+}
+
+-(float32) getPolygonDensity {
+    b2Fixture *fixture = _body->GetFixtureList();
+    return fixture->GetDensity();
+}
+
+-(void) setPolygonFriction:(float32) friction {
+    b2Fixture *fixture = _body->GetFixtureList();
+    fixture->SetFriction(friction);
+}
+
+-(float32) getPolygonFriction {
+    b2Fixture *fixture = _body->GetFixtureList();
+    return fixture->GetFriction();
+}
+
+-(void) setPolygonRestitution:(float32) restitution {
+    b2Fixture *fixture = _body->GetFixtureList();
+    fixture->SetRestitution(restitution);
+}
+
+-(float32) getPolygonRestitution {
+    b2Fixture *fixture = _body->GetFixtureList();
+    return fixture->GetRestitution();
+}
+
+-(void) setPolygonRotation:(float32)angle {
+    b2Vec2 pos = _body->GetPosition();
+    
+    _body->SetTransform(pos, CC_DEGREES_TO_RADIANS(angle));
+}
+
+-(float32) getPolygonRotation {
+    return _body->GetAngle();
+}
+
+-(void) polygonApplyForceToCenter:(b2Vec2) force {
+    _body->ApplyForceToCenter(force);
+}
+
+-(void) polygonApplyForce:(b2Vec2) force toPoint:(b2Vec2) point {
+    _body->ApplyForce(force, point);
+}
+
+-(void) polygonApplyLinearImpulse:(b2Vec2) impulse {
+    _body->ApplyLinearImpulse(impulse, _body->GetWorldCenter());
+    
+}
+
+-(void) polygonSetAngularVelocity:(float32) impulse {
+    _body->SetAngularVelocity(impulse);
+}
+
+-(void) polygonCenterOfMassAlignWithShape {
+    b2MassData massD;
+    _body->GetMassData(&massD);
+    
+    b2Fixture *fixture = _body->GetFixtureList();
+    b2PolygonShape *shape = (b2PolygonShape *)fixture->GetShape();
+    b2Vec2 centroid = shape->m_centroid;
+    massD.center = centroid;
+    
+    _body->SetMassData(&massD);
+}
+
+-(void) polygonCenterOfMassAlignWith:(b2Vec2) center {
+    b2MassData massD;
+    _body->GetMassData(&massD);
+    
+    massD.center = center;
+    
+    _body->SetMassData(&massD);
+}
+
+-(void) polygonCenterOfMassReset {
+    b2MassData massD;
+    _body->GetMassData(&massD);
+    
+    massD.center = b2Vec2(0.0, 0.0);
+    
+    _body->SetMassData(&massD);
+
 }
 
 -(void)draw
 {
+/*    
     glEnable(GL_BLEND);
-     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    // glCo;
-    
-    //    ccDrawCircle(mySprite.position, attackRange, 360, 30, false);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     b2Vec2 position = _body->GetPosition();
     
     ccDrawCircle(ccp(position.x, position.y), 20, 360, 30, false);
-    
+  */  
     [super draw];
-    
 }
 
 
-//-(void)setPosition:(CGPoint) position {
-//    [super setPosition:position];
-//    _body->SetTransform(b2Vec2(position.x, position.y), 0);
-//}
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20D0D2215EF9478003DE7A3 /* Asteroid.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2115EF9478003DE7A3 /* Asteroid.mm */; };
+		E20D0D2615F331BE003DE7A3 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2515F331BE003DE7A3 /* ContactListener.mm */; };
+		E20D0D2915F335C1003DE7A3 /* AsteroidManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2815F335C1003DE7A3 /* AsteroidManager.mm */; };
 		E22809B915CECB260067F356 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22809B815CECB260067F356 /* QuartzCore.framework */; };
 		E22809BB15CECB260067F356 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22809BA15CECB260067F356 /* OpenGLES.framework */; };
 		E22809BD15CECB260067F356 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22809BC15CECB260067F356 /* OpenAL.framework */; };
@@ -201,6 +204,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E20D0D2015EF9478003DE7A3 /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
+		E20D0D2115EF9478003DE7A3 /* Asteroid.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Asteroid.mm; sourceTree = "<group>"; };
+		E20D0D2415F331BE003DE7A3 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
+		E20D0D2515F331BE003DE7A3 /* ContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContactListener.mm; sourceTree = "<group>"; };
+		E20D0D2715F335C1003DE7A3 /* AsteroidManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsteroidManager.h; sourceTree = "<group>"; };
+		E20D0D2815F335C1003DE7A3 /* AsteroidManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AsteroidManager.mm; sourceTree = "<group>"; };
 		E22809B415CECB260067F356 /* Infinity race.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Infinity race.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22809B815CECB260067F356 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E22809BA15CECB260067F356 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1213,6 +1222,10 @@
 				E233848E15D22EAB001C1A76 /* Player.mm */,
 				E233849015D22EBC001C1A76 /* AnchorPoint.h */,
 				E233849115D22EBC001C1A76 /* AnchorPoint.mm */,
+				E20D0D2015EF9478003DE7A3 /* Asteroid.h */,
+				E20D0D2115EF9478003DE7A3 /* Asteroid.mm */,
+				E20D0D2415F331BE003DE7A3 /* ContactListener.h */,
+				E20D0D2515F331BE003DE7A3 /* ContactListener.mm */,
 			);
 			name = "World Objects";
 			sourceTree = "<group>";
@@ -1220,6 +1233,8 @@
 		E233849315D23983001C1A76 /* World Objects Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E20D0D2715F335C1003DE7A3 /* AsteroidManager.h */,
+				E20D0D2815F335C1003DE7A3 /* AsteroidManager.mm */,
 				E23384A315D29466001C1A76 /* PlayerManager.h */,
 				E23384A415D29466001C1A76 /* PlayerManager.mm */,
 				E2416ED915D2A3F700D6A6E0 /* LevelManager.h */,
@@ -1506,6 +1521,9 @@
 				E28688D715DFE20C00B65320 /* tsControlButton.m in Sources */,
 				E28688DA15E1568700B65320 /* tsControlSpriteButton.m in Sources */,
 				E2D2EA0C15E5F8B4007BFE2C /* SceneManager.mm in Sources */,
+				E20D0D2215EF9478003DE7A3 /* Asteroid.mm in Sources */,
+				E20D0D2615F331BE003DE7A3 /* ContactListener.mm in Sources */,
+				E20D0D2915F335C1003DE7A3 /* AsteroidManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

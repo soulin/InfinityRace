@@ -8,6 +8,8 @@
 
 #import "PolygonSprite.h"
 
-@interface AnchorPoint : PolygonSprite
+@interface AnchorPoint : PolygonSprite {
+    
+}
 
 @end

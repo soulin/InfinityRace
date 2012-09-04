@@ -25,7 +25,7 @@
         _player.body->SetTransform(b2Vec2((screen.width-(centerVec.x*PTM_RATIO/2))/2/PTM_RATIO,10/PTM_RATIO),0.0f);
         _player.body->SetFixedRotation(YES);
      //   [self schedule:@selector(acceleration:)];
-        [_player activateCollisions];
+        [_player activatePolygonCollisions];
         
         [self addChild:_player];
         
@@ -141,7 +141,7 @@
         }
 
     }
-    b2Vec2 force = b2Vec2(_touchShiftDistance/10, 5.5f);
+    b2Vec2 force = b2Vec2(_touchShiftDistance/5, 5.5f);
     _player.body->SetLinearVelocity(force);
 }
 

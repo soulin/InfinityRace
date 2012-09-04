@@ -285,7 +285,7 @@ enum {
         }
     }
     
-    [_levelManager update:dt];
+ //   [_levelManager update:dt];
 
 }
 

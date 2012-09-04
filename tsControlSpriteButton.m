@@ -27,7 +27,6 @@
 		_defaultSprite = nil;
 		_button = nil;
         
-		//[self schedule:@selector(watchSelf)];
 	}
 	return self;
 }
