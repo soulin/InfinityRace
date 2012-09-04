@@ -16,7 +16,7 @@ enum {
     DIRECTION_RIGHT
 };
 
-@interface PlayerManager : CCLayer {//CCNode <CCTargetedTouchDelegate> {
+@interface PlayerManager : CCNode <CCTargetedTouchDelegate> {
     b2World *_world;
     Player *_player;
 
