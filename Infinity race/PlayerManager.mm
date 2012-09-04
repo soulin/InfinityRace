@@ -29,7 +29,8 @@
         
         [self addChild:_player];
         
-        [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
+        self.isTouchEnabled = YES;
+ //       [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
         isAccelerate = NO;
         
         _playerShiftDirection = DIRECTION_NONE;

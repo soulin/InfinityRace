@@ -36,6 +36,7 @@
 }
 
 -(id) initWithWorld:(b2World *)world;
+-(CGPoint) locationFromTouches:(NSSet *)touches;
 //-(void) update:(ccTime) dt;
 
 @end

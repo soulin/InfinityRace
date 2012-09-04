@@ -22,7 +22,8 @@
         [self addChild:_asteroidManager];
         [self scheduleUpdate];
     
-                [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
+    //    self.isTouchEnabled = YES;
+//                [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
 //        _playerManager = [[PlayerManager alloc] initWithWorld: world];
 //        [self addChild:_playerManager];
 //        
@@ -73,6 +74,18 @@
 }
 
 
+-(CGPoint) locationFromTouches:(NSSet *)touches
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchLocation = [touch locationInView: [touch view]];
+    return [[CCDirector sharedDirector] convertToGL:touchLocation];
+}
+
+-(void) registerWithTouchDispatcher
+{
+    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:INT_MIN+1 swallowsTouches:NO];
+}
+
 -(void) update:(ccTime) dt
 {
     CGPoint myPosition = super.position;
@@ -97,7 +110,7 @@
 
 -(BOOL) ccTouchBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
- //   CCLOG(@"!!!!");
+    CCLOG(@"!!!!");
  /*   [_rope createRopeWithBodyA:_playerManager.player.body anchorA:_playerManager.player.body->GetLocalCenter()
                          bodyB:_anchorPoint.body anchorB:_anchorPoint.centroid
                          sag:1.1];
