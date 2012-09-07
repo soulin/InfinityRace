@@ -8,6 +8,18 @@
 
 #import "CCLayer.h"
 
-@interface InterfaceLayer : CCLayer
+@class tsControlSpriteButton;
+@class tsControlButton;
+
+@interface InterfaceLayer : CCLayer {
+    tsControlSpriteButton *_button;
+    tsControlButton *_rightButton;
+}
+
+-(id) init;
+
+-(bool) isButtonClicked;
+-(bool) isButtonPressed;
+-(void) resetButtonState;
 
 @end

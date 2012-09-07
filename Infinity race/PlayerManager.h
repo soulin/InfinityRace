@@ -16,22 +16,18 @@ enum {
     DIRECTION_RIGHT
 };
 
-@interface PlayerManager : CCNode <CCTargetedTouchDelegate> {
+@interface PlayerManager : CCNode{
     b2World *_world;
     Player *_player;
 
 @private
-    BOOL isAccelerate;
-    CGPoint _touchCurrent, _touchPrevious;    
-    int _playerShiftDirection;
-    float _touchShiftDistance;
-    
-    float _currentPlayerAngle;
+    CGPoint _velocity;
 }
 
 @property (assign, readwrite) Player *player;
 
 -(id) initWithWorld:(b2World *)world;
+
 
 
 @end

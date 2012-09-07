@@ -21,12 +21,13 @@ enum {
     
     float _radius;
     
-    int _status;
+    int _state;
 }
 
-@property (nonatomic, assign) int status;
+@property (nonatomic, assign) int state;
 @property (nonatomic, assign) float radius;
 
 -(id) initWithRect:(CGRect) rect;
+-(void) resetState;
 
 @end

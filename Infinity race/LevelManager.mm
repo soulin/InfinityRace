@@ -8,6 +8,8 @@
 
 #import "LevelManager.h"
 #import "AsteroidManager.h"
+#import "PlayerManager.h"
+#import "InterfaceLayer.h"
 
 @implementation LevelManager
 
@@ -21,6 +23,14 @@
         
         [self addChild:_asteroidManager];
         [self scheduleUpdate];
+        
+        _playerManager = [[PlayerManager alloc] initWithWorld: world];
+        [self addChild:_playerManager];
+        
+        _interfaceLayer = [[InterfaceLayer alloc] init];
+        [self addChild:_interfaceLayer];
+        
+        
     
     //    self.isTouchEnabled = YES;
 //                [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
@@ -88,12 +98,22 @@
 
 -(void) update:(ccTime) dt
 {
-    CGPoint myPosition = super.position;
-
-    myPosition.y -= 1;
-    [self setPosition:myPosition];
-    self.parent.position = myPosition;
-    NSLog(@"!y= %f", super.position.y);
+    
+    if ([_interfaceLayer isButtonPressed]) {
+        CCLOG(@"Button Pressed");
+    }
+    
+    if ([_interfaceLayer isButtonClicked]) {
+        CCLOG(@"Button Clicked");
+        [_interfaceLayer resetButtonState];
+        
+    }
+//    CGPoint myPosition = super.position;
+//
+//    myPosition.x -= 1;
+//    [self setPosition:myPosition];
+//    self.parent.position = myPosition;
+//    NSLog(@"!y= %f", super.position.y);
 //    if (_rightButton.status == BUTTON_STATE_CLICKED) {
 //        _rightButton.status = BUTTON_STATE_NONE;
 //        float angle = _playerManager.player.body->GetAngle();

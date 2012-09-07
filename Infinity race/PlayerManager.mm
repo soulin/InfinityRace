@@ -20,31 +20,22 @@
         _player = [[Player alloc] initWithWorld: world];
         
         CGSize screen = [[CCDirector sharedDirector] winSize];
-        b2Vec2 centerVec = _player.body->GetLocalCenter();
         
-        _player.body->SetTransform(b2Vec2((screen.width-(centerVec.x*PTM_RATIO/2))/2/PTM_RATIO,10/PTM_RATIO),0.0f);
-        _player.body->SetFixedRotation(YES);
-     //   [self schedule:@selector(acceleration:)];
+        float x = 0.0;//screen.height/2;
+        float y = screen.width/2;
+
+        
+        [_player setPolygonPosition:ccp(x+50, y)];
         [_player activatePolygonCollisions];
         
-        [self addChild:_player];
-        
-//        self.isTouchEnabled = YES;
-       [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
-        isAccelerate = NO;
-        
-        _playerShiftDirection = DIRECTION_NONE;
-        _touchShiftDistance = 0.0;
-        _currentPlayerAngle = 0.0;
-        
         [self scheduleUpdate];
-
-
     }
     
     return self;
 }
 
+
+/*
 - (void) acceleration:(ccTime) dt {
     b2Vec2 force = b2Vec2(_touchShiftDistance/10, 0.5f);
 //    force.x=force.x*cos(_rotateAngle)-force.y*sin(_rotateAngle);
@@ -119,12 +110,12 @@
     }
 
 }
-
+*/
 -(void) update:(ccTime) dt {
 
     //    force.x=force.x*cos(_rotateAngle)-force.y*sin(_rotateAngle);
     //    force.y=force.y*cos(_rotateAngle)+force.x*sin(_rotateAngle);
-    if (isAccelerate == NO && (_playerShiftDirection == DIRECTION_LEFT || _playerShiftDirection == DIRECTION_RIGHT)) {
+  /*  if (isAccelerate == NO && (_playerShiftDirection == DIRECTION_LEFT || _playerShiftDirection == DIRECTION_RIGHT)) {
         if (_touchShiftDistance == 0.0f)
             _playerShiftDirection = DIRECTION_NONE;
         
@@ -143,7 +134,7 @@
 
     }
     b2Vec2 force = b2Vec2(_touchShiftDistance/5, 5.5f);
-    _player.body->SetLinearVelocity(force);
+    _player.body->SetLinearVelocity(force);*/
 }
 
 -(void) draw {

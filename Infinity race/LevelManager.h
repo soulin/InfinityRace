@@ -8,19 +8,20 @@
 
 #import "cocos2d.h"
 #import "box2d.h"
-#import "PlayerManager.h"
 #import "Rope.h"
 #import "AnchorPoint.h"
 #import "tdRope.h"
-#import "tsControlButton.h"
-#import "tsControlSpriteButton.h"
+
 
 @class AsteroidManager;
+@class InterfaceLayer;
+@class PlayerManager;
 
 @interface LevelManager : CCLayer {
     
     AsteroidManager *_asteroidManager;
-//    PlayerManager *_playerManager;
+    PlayerManager *_playerManager;
+    InterfaceLayer *_interfaceLayer;
 //    NSMutableArray *_anchorPoints;
 //    
 //    AnchorPoint *_anchorPoint;

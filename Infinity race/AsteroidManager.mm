@@ -26,9 +26,11 @@
         
             CGSize screen = [[CCDirector sharedDirector] winSize];
             
-            float x = [self randomValueBetween:20 andValue:screen.width-20];
-            float y = [self randomValueBetween:screen.height/2 andValue:screen.height];
-            NSLog(@"position x: %f y: %f \n", x,y);
+        //    float y = [self randomValueBetween:20 andValue:screen.width-20];
+          //  float x = [self randomValueBetween:screen.height/2 andValue:screen.height];
+            float x = screen.height/2;
+            float y = screen.width/2;
+         //   NSLog(@"position x: %f y: %f \n", x,y);
             
             [asteroid setPolygonPosition:ccp(x, y)];
             [asteroid activatePolygonCollisions];
@@ -69,7 +71,7 @@
 
 -(void) update:(ccTime) dt
 {
-    int i = 0;
+/*    int i = 0;
     for (Asteroid *asteroid in _asteroids) {
         NSLog(@"y= %f\n", [asteroid getPolygonPosition].y);
         i++;
@@ -77,7 +79,7 @@
     //    astPos.y -= 1;
         
      //   [asteroid polygonApplyForceToCenter:b2Vec2(0.0,-2.0)];
-    }
+    }*/
 /*    CGPoint pos = [self position];
     pos.y += 10;
     [self setPosition:pos];
