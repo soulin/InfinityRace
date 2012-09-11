@@ -50,5 +50,7 @@
 -(void) polygonCenterOfMassAlignWithShape;
 -(void) polygonCenterOfMassAlignWith:(b2Vec2) center;
 -(void) polygonCenterOfMassReset;
+-(float) getPolygonMass;
+-(void) setPolygonMass:(float) mass;
 
 @end

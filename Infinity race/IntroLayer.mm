@@ -50,6 +50,8 @@
 		background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
 	}
 	background.position = ccp(size.width/2, size.height/2);
+    
+    CCLOG(@"Screen position: x = %f y = %f", size.height, size.width);
 
 	// add the label as a child to this Layer
 	[self addChild: background];
@@ -60,6 +62,6 @@
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] withColor:ccWHITE]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelScene scene] withColor:ccWHITE]];
 }
 @end

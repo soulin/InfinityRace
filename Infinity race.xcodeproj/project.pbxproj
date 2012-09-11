@@ -11,6 +11,7 @@
 		E20D0D2615F331BE003DE7A3 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2515F331BE003DE7A3 /* ContactListener.mm */; };
 		E20D0D2915F335C1003DE7A3 /* AsteroidManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2815F335C1003DE7A3 /* AsteroidManager.mm */; };
 		E20D0D3915F606D1003DE7A3 /* InterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D3815F606D1003DE7A3 /* InterfaceLayer.m */; };
+		E20E555715FB86650037EB2E /* LevelScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20E555615FB86650037EB2E /* LevelScene.mm */; };
 		E22809B915CECB260067F356 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22809B815CECB260067F356 /* QuartzCore.framework */; };
 		E22809BB15CECB260067F356 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22809BA15CECB260067F356 /* OpenGLES.framework */; };
 		E22809BD15CECB260067F356 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22809BC15CECB260067F356 /* OpenAL.framework */; };
@@ -212,6 +213,8 @@
 		E20D0D2815F335C1003DE7A3 /* AsteroidManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AsteroidManager.mm; sourceTree = "<group>"; };
 		E20D0D3715F606D1003DE7A3 /* InterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceLayer.h; sourceTree = "<group>"; };
 		E20D0D3815F606D1003DE7A3 /* InterfaceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceLayer.m; sourceTree = "<group>"; };
+		E20E555515FB86640037EB2E /* LevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelScene.h; sourceTree = "<group>"; };
+		E20E555615FB86650037EB2E /* LevelScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelScene.mm; sourceTree = "<group>"; };
 		E22809B415CECB260067F356 /* Infinity race.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Infinity race.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22809B815CECB260067F356 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E22809BA15CECB260067F356 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1241,6 +1244,8 @@
 				E2416EDA15D2A3F700D6A6E0 /* LevelManager.mm */,
 				E20D0D3715F606D1003DE7A3 /* InterfaceLayer.h */,
 				E20D0D3815F606D1003DE7A3 /* InterfaceLayer.m */,
+				E20E555515FB86640037EB2E /* LevelScene.h */,
+				E20E555615FB86650037EB2E /* LevelScene.mm */,
 			);
 			name = "World Objects Managers";
 			path = "Infinity race";
@@ -1524,6 +1529,7 @@
 				E20D0D2615F331BE003DE7A3 /* ContactListener.mm in Sources */,
 				E20D0D2915F335C1003DE7A3 /* AsteroidManager.mm in Sources */,
 				E20D0D3915F606D1003DE7A3 /* InterfaceLayer.m in Sources */,
+				E20E555715FB86650037EB2E /* LevelScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

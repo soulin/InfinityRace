@@ -214,6 +214,24 @@
 
 }
 
+-(float) getPolygonMass {
+    b2MassData massD;
+    _body->GetMassData(&massD);
+    
+    return massD.mass;
+}
+
+-(void) setPolygonMass:(float) mass {
+    b2MassData massD;
+    _body->GetMassData(&massD);
+    
+    massD.mass = mass;
+    massD.I = 30.0;
+    
+    _body->SetMassData(&massD);
+}
+
+
 -(void)draw
 {
 /*    

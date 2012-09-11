@@ -27,7 +27,7 @@ enum {
 @property (assign, readwrite) Player *player;
 
 -(id) initWithWorld:(b2World *)world;
-
-
+-(void) accelerate;
+-(void) resetPosition;
 
 @end

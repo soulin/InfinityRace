@@ -13,7 +13,9 @@
 
 @interface InterfaceLayer : CCLayer {
     tsControlSpriteButton *_button;
+    tsControlSpriteButton *_resetButton;
     tsControlButton *_rightButton;
+    tsControlButton *_resetButton1;
 }
 
 -(id) init;
@@ -21,5 +23,7 @@
 -(bool) isButtonClicked;
 -(bool) isButtonPressed;
 -(void) resetButtonState;
+
+-(bool) isResetButtonClicked;
 
 @end

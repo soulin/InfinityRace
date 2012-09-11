@@ -57,9 +57,8 @@ enum {
 		// init physics
 		[self initPhysics];
         
-        _levelManager = [[LevelManager alloc] initWithWorld:world];
-        [self addChild:_levelManager];
-        
+//        _levelScene = [[LevelScene alloc] initWithWorld:world];
+//        [self addChild:_levelScene];
    /*     [self createRopeWithBodyA:_player.body anchorA:_player.body->GetLocalCenter()
                             bodyB:_anchorPoint.body anchorB:_anchorPoint.body->GetLocalCenter()
                               sag:1.1];

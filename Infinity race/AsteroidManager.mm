@@ -28,9 +28,9 @@
             
         //    float y = [self randomValueBetween:20 andValue:screen.width-20];
           //  float x = [self randomValueBetween:screen.height/2 andValue:screen.height];
-            float x = screen.height/2;
-            float y = screen.width/2;
-         //   NSLog(@"position x: %f y: %f \n", x,y);
+            float x = screen.width/2;
+            float y = screen.height/2;
+            NSLog(@"Asteroid position x: %f y: %f \n", x,y);
             
             [asteroid setPolygonPosition:ccp(x, y)];
             [asteroid activatePolygonCollisions];
@@ -43,6 +43,7 @@
         
             [asteroid polygonCenterOfMassAlignWithShape];
             [asteroid polygonSetAngularVelocity:[self randomValueBetween:0.5 andValue:2]];
+            [asteroid setPolygonMass:20.0f];
             //        NSLog(@"Random %f\n", (float)(arc4random() % 200)/100);
 
          //   [_asteroid polygonApplyLinearImpulse:b2Vec2(0.0f,-(float)(arc4random() % 200)/100)];

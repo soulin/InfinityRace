@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "IntroLayer.h"
-#import "HelloWorldLayer.h"
+#import "LevelScene.h"
 
 @implementation AppController
 
@@ -49,11 +49,11 @@
 	
 	// for rotation and other messages
 	[director_ setDelegate:self];
-    
+        
 	// 2D projection
 	[director_ setProjection:kCCDirectorProjection2D];
 	//	[director setProjection:kCCDirectorProjection3D];
-	
+    
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	if( ! [director_ enableRetinaDisplay:YES] )
 		CCLOG(@"Retina Display Not supported");
@@ -77,13 +77,14 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 	
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [HelloWorldLayer scene]];
+	[director_ pushScene: [LevelScene scene]];
 	
 	
 	// Create a Navigation Controller with the Director
 	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
-	
+//    navController_.interfaceOrientation = UIInterfaceOrientationLandscapeRight;
+    
 	// set the Navigation Controller as the root view controller
 //	[window_ addSubview:navController_.view];	// Generates flicker.
 	[window_ setRootViewController:navController_];
@@ -91,6 +92,8 @@
 	// make main window visible
 	[window_ makeKeyAndVisible];
 	
+//    [[CCDirector sharedDirector] runWithScene: [LevelScene node]];
+
 	return YES;
 }
 

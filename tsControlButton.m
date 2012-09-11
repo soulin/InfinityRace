@@ -46,11 +46,7 @@
 #pragma mark Touch Delegate
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-
-
- //   if (_active) return NO;
-    
+{   
     CGPoint location = [[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]];
 	location = [self convertToNodeSpace:location];
     

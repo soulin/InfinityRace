@@ -14,14 +14,16 @@
 
 
 @class AsteroidManager;
-@class InterfaceLayer;
 @class PlayerManager;
 
 @interface LevelManager : CCLayer {
     
     AsteroidManager *_asteroidManager;
     PlayerManager *_playerManager;
-    InterfaceLayer *_interfaceLayer;
+    
+    bool _move;
+    b2World *_world;
+
 //    NSMutableArray *_anchorPoints;
 //    
 //    AnchorPoint *_anchorPoint;
@@ -38,6 +40,8 @@
 
 -(id) initWithWorld:(b2World *)world;
 -(CGPoint) locationFromTouches:(NSSet *)touches;
+-(void) moveToFlag:(bool) flag;
+-(void) resetLevel;
 //-(void) update:(ccTime) dt;
 
 @end

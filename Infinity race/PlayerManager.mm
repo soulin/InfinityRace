@@ -19,13 +19,7 @@
         _world = world;
         _player = [[Player alloc] initWithWorld: world];
         
-        CGSize screen = [[CCDirector sharedDirector] winSize];
-        
-        float x = 0.0;//screen.height/2;
-        float y = screen.width/2;
-
-        
-        [_player setPolygonPosition:ccp(x+50, y)];
+        [self resetPosition];
         [_player activatePolygonCollisions];
         
         [self scheduleUpdate];
@@ -34,6 +28,17 @@
     return self;
 }
 
+-(void) resetPosition {
+    CGSize screen = [[CCDirector sharedDirector] winSize];
+    
+    float x = 0.0;//screen.height/2;
+    float y = screen.height/2;
+    
+    CCLOG(@"Screen position: x = %f y = %f", screen.height, screen.width);
+    CCLOG(@"Player position: x = %f y = %f", x, y);
+
+    [_player setPolygonPosition:ccp(x+50, y)];
+}
 
 /*
 - (void) acceleration:(ccTime) dt {
@@ -111,8 +116,15 @@
 
 }
 */
+-(void) accelerate {
+    b2Vec2 force = b2Vec2(5.5, 0);
+    _player.body->ApplyForceToCenter(force);
+}
+
 -(void) update:(ccTime) dt {
 
+    
+    
     //    force.x=force.x*cos(_rotateAngle)-force.y*sin(_rotateAngle);
     //    force.y=force.y*cos(_rotateAngle)+force.x*sin(_rotateAngle);
   /*  if (isAccelerate == NO && (_playerShiftDirection == DIRECTION_LEFT || _playerShiftDirection == DIRECTION_RIGHT)) {

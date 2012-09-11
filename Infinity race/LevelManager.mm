@@ -17,6 +17,8 @@
 {
     if ((self = [super init])) {
         
+        _world = world;
+        
         _asteroidManager = [[AsteroidManager alloc] initWithWorld:world];
         
         _asteroidManager.speed = 1.0f;
@@ -27,10 +29,7 @@
         _playerManager = [[PlayerManager alloc] initWithWorld: world];
         [self addChild:_playerManager];
         
-        _interfaceLayer = [[InterfaceLayer alloc] init];
-        [self addChild:_interfaceLayer];
-        
-        
+        _move = NO;
     
     //    self.isTouchEnabled = YES;
 //                [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
@@ -96,36 +95,9 @@
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:INT_MIN+1 swallowsTouches:NO];
 }
 
--(void) update:(ccTime) dt
-{
-    
-    if ([_interfaceLayer isButtonPressed]) {
-        CCLOG(@"Button Pressed");
-    }
-    
-    if ([_interfaceLayer isButtonClicked]) {
-        CCLOG(@"Button Clicked");
-        [_interfaceLayer resetButtonState];
-        
-    }
-//    CGPoint myPosition = super.position;
-//
-//    myPosition.x -= 1;
-//    [self setPosition:myPosition];
-//    self.parent.position = myPosition;
-//    NSLog(@"!y= %f", super.position.y);
-//    if (_rightButton.status == BUTTON_STATE_CLICKED) {
-//        _rightButton.status = BUTTON_STATE_NONE;
-//        float angle = _playerManager.player.body->GetAngle();
-//        CGSize screen = [[CCDirector sharedDirector] winSize];
-//        b2Vec2 centerVec = _playerManager.player.body->GetLocalCenter();
-//
-//        
-//        _playerManager.player.body->SetTransform(b2Vec2((screen.width-(centerVec.x*PTM_RATIO/2))/2/PTM_RATIO,100/PTM_RATIO),angle);
-//    }
-//
-//    //ccpDistance
-//    [_rope update:dt];
+-(void) resetLevel {
+    [_playerManager resetPosition];
+    self.parent.position = CGPointZero;
 }
 
 -(BOOL) ccTouchBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -160,6 +132,42 @@
     }
   */
     return YES;
+}
+
+-(void) moveToFlag:(bool) flag {
+    _move = flag;
+}
+
+-(void) update:(ccTime) dt {
+    if (_move == YES) {
+        CGPoint _prevPos = [_playerManager.player getPolygonPosition];
+        int32 velocityIterations = 8;
+        int32 positionIterations = 1;
+        
+        // Instruct the world to perform a single step of simulation. It is
+        // generally best to keep the time step and iterations fixed.
+        _world->Step(dt, velocityIterations, positionIterations);
+        
+        [_playerManager accelerate];
+        for (b2Body* b = _world->GetBodyList(); b; b = b->GetNext())
+        {
+        }
+
+
+        CGPoint pos = [_playerManager.player getPolygonPosition];
+        
+        CCLOG(@"Prev Pos: %f Curr: %f", _prevPos.x, pos.x);
+        CGPoint myPosition = self.parent.position;
+        
+        CCLOG(@"Mypos prev x: %f", myPosition.x);
+         
+         myPosition.x -= pos.x-_prevPos.x;
+        CCLOG(@"Mypos curr x: %f", myPosition.x);
+
+         self.parent.position = myPosition;
+
+
+    }
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
