@@ -28,16 +28,19 @@
 }
 
 -(void) onEnter {
+    [super onEnter];
+    
     CCLOG(@"onEnter");
     _levelLayer = [[LevelManager alloc] initWithWorld:_world];
     [self addChild:_levelLayer];
     
 }
+
 //-(id) initWithHUD:(InterfaceLayer *) interface
 -(id) init
 {
     if ((self = [super init])) {
-      //  _interfaceLayer = interface;
+     //   _interfaceLayer = interface;
         
         [self initPhysics];
         
@@ -108,14 +111,25 @@
     }
     
     if ([_interfaceLayer isResetButtonClicked]) {
-        [_levelLayer resetLevel];
+        [_levelLayer reloadLevel];
         [_interfaceLayer resetButtonState];
+    }
+    
+    if ([_interfaceLayer isUpButtonPressed]) {
+        CCLOG(@"Up Button Pressed");
+        _levelLayer.playerDirection = ccp(_levelLayer.playerDirection.x, 1.0f);
+    }
+    else
+    if ([_interfaceLayer isDownButtonPressed]) {
+        CCLOG(@"Down Button Pressed");
+        _levelLayer.playerDirection = ccp(_levelLayer.playerDirection.x, -1.0f);
     }
     
     if ([_interfaceLayer isButtonPressed]) {
         CCLOG(@"Button Pressed");
+        
+         _levelLayer.playerDirection = ccp(2.0f, _levelLayer.playerDirection.y);
 
-        [_levelLayer moveToFlag:YES];
      /*   CGPoint myPosition = _levelLayer.parent.position;
         
         myPosition.x -= 10;
@@ -125,7 +139,16 @@
     if ([_interfaceLayer isButtonClicked]) {
         CCLOG(@"Button Clicked");
         [_interfaceLayer resetButtonState];
-        [_levelLayer moveToFlag:NO];
+
+        _levelLayer.playerDirection = ccp(0.0f, _levelLayer.playerDirection.y);
+    }
+    
+
+    if ([_interfaceLayer isUpButtonClicked] || [_interfaceLayer isDownButtonClicked]) {
+        [_interfaceLayer resetUpButton];
+        [_interfaceLayer resetDownButton];
+        _levelLayer.playerDirection = ccp(_levelLayer.playerDirection.x, 0.0f);
+        
     }
 
 }

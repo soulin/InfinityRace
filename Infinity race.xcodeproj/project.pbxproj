@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E201027215FFA51A007BD61B /* button-up-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E201027115FFA51A007BD61B /* button-up-hd.png */; };
 		E20D0D2215EF9478003DE7A3 /* Asteroid.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2115EF9478003DE7A3 /* Asteroid.mm */; };
 		E20D0D2615F331BE003DE7A3 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2515F331BE003DE7A3 /* ContactListener.mm */; };
 		E20D0D2915F335C1003DE7A3 /* AsteroidManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E20D0D2815F335C1003DE7A3 /* AsteroidManager.mm */; };
@@ -205,6 +206,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E201027115FFA51A007BD61B /* button-up-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-up-hd.png"; path = "Resources/button-up-hd.png"; sourceTree = "<group>"; };
 		E20D0D2015EF9478003DE7A3 /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
 		E20D0D2115EF9478003DE7A3 /* Asteroid.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Asteroid.mm; sourceTree = "<group>"; };
 		E20D0D2415F331BE003DE7A3 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 		E22809CB15CECB260067F356 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E201027115FFA51A007BD61B /* button-up-hd.png */,
 				E28688DD15E159CE00B65320 /* button-close-hd.png */,
 				E233849515D25553001C1A76 /* rope.png */,
 				E22809CC15CECB260067F356 /* Default.png */,
@@ -1350,6 +1353,7 @@
 				E2280BE515CECB290067F356 /* blocks.png in Resources */,
 				E233849C15D25553001C1A76 /* rope.png in Resources */,
 				E28688DE15E159CE00B65320 /* button-close-hd.png in Resources */,
+				E201027215FFA51A007BD61B /* button-up-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

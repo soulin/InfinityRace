@@ -23,36 +23,10 @@
         _asteroids = [[NSMutableArray alloc] init];
         for (int i = 0; i<1; i++ ) {
             Asteroid *asteroid = [[Asteroid alloc] initWithWorld:world];
-        
-            CGSize screen = [[CCDirector sharedDirector] winSize];
             
-        //    float y = [self randomValueBetween:20 andValue:screen.width-20];
-          //  float x = [self randomValueBetween:screen.height/2 andValue:screen.height];
-            float x = screen.width/2;
-            float y = screen.height/2;
-            NSLog(@"Asteroid position x: %f y: %f \n", x,y);
-            
-            [asteroid setPolygonPosition:ccp(x, y)];
-            [asteroid activatePolygonCollisions];
-            [asteroid setPolygonRotation:90];
-        
-            [asteroid setPolygonDensity:5.0f];
-            [asteroid setPolygonFriction:0.2];
-            [asteroid setPolygonRestitution:0.2];
-        
-        
-            [asteroid polygonCenterOfMassAlignWithShape];
-            [asteroid polygonSetAngularVelocity:[self randomValueBetween:0.5 andValue:2]];
-            [asteroid setPolygonMass:20.0f];
-            //        NSLog(@"Random %f\n", (float)(arc4random() % 200)/100);
-
-         //   [_asteroid polygonApplyLinearImpulse:b2Vec2(0.0f,-(float)(arc4random() % 200)/100)];
-        
             [self addChild:asteroid];
             [_asteroids addObject:asteroid];
         }
-        
-        _speed = 0.0f;
         
         [self scheduleUpdate];
     }
@@ -60,6 +34,38 @@
     return self;
 }
 
+-(void) reinitAsteroids {
+    for (Asteroid *asteroid in _asteroids) {
+        [asteroid setPolygonRotation:0.0f];
+        [asteroid polygonSetAngularVelocity:0.0f];
+        [asteroid polygonSetLinearVelocity:b2Vec2_zero];
+        
+        [self initAsteroids];
+    }
+}
+
+-(void) initAsteroids {
+    for (Asteroid *asteroid in _asteroids) {
+        CGSize screen = [[CCDirector sharedDirector] winSize];
+        
+        float x = screen.width/2;
+        float y = screen.height/2;
+        CCLOG(@"Asteroid position x: %f y: %f \n", x,y);
+        
+        [asteroid setPolygonPosition:ccp(x, y)];
+        [asteroid activatePolygonCollisions];
+        [asteroid setPolygonRotation:90];
+        
+        [asteroid setPolygonDensity:5.0f];
+        [asteroid setPolygonFriction:0.2];
+        [asteroid setPolygonRestitution:0.2];
+        
+        
+        [asteroid polygonCenterOfMassAlignWithShape];
+        [asteroid polygonSetAngularVelocity:[self randomValueBetween:0.5 andValue:2]];
+        [asteroid setPolygonMass:20.0f];
+    }
+}
 
 -(void) dealloc
 {

@@ -179,9 +179,14 @@
     
 }
 
--(void) polygonSetAngularVelocity:(float32) impulse {
-    _body->SetAngularVelocity(impulse);
+-(void) polygonSetAngularVelocity:(float32) velocity {
+    _body->SetAngularVelocity(velocity);
 }
+
+-(void) polygonSetLinearVelocity:(b2Vec2) velocity {
+    _body->SetLinearVelocity(velocity);
+}
+
 
 -(void) polygonCenterOfMassAlignWithShape {
     b2MassData massD;

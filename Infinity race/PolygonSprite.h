@@ -46,7 +46,8 @@
 -(void) polygonApplyForceToCenter:(b2Vec2) force;
 -(void) polygonApplyForce:(b2Vec2) force toPoint:(b2Vec2) point;
 -(void) polygonApplyLinearImpulse:(b2Vec2) impulse;
--(void) polygonSetAngularVelocity:(float32) impulse;
+-(void) polygonSetAngularVelocity:(float32) velocity;
+-(void) polygonSetLinearVelocity:(b2Vec2) velocity;
 -(void) polygonCenterOfMassAlignWithShape;
 -(void) polygonCenterOfMassAlignWith:(b2Vec2) center;
 -(void) polygonCenterOfMassReset;

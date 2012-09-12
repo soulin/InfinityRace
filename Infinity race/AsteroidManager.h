@@ -13,13 +13,14 @@
 
 @interface AsteroidManager : CCNode {
     NSMutableArray *_asteroids;
-    float _speed;
-//    Asteroid *_asteroid;
+
 }
 
 @property (nonatomic, readwrite) float speed;
 
 -(id) initWithWorld:(b2World *)world;
 -(float) randomValueBetween:(float)low andValue:(float)high;
+-(void) initAsteroids;
+-(void) reinitAsteroids;
 
 @end

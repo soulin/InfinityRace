@@ -22,12 +22,14 @@ enum {
 
 @private
     CGPoint _velocity;
+    float _playeOffset;
 }
 
 @property (assign, readwrite) Player *player;
 
 -(id) initWithWorld:(b2World *)world;
--(void) accelerate;
--(void) resetPosition;
+-(void) movePlayer:(CGPoint) direction;
+-(void) initPlayer;
+-(void) reinitPlayer;
 
 @end

@@ -23,25 +23,15 @@
     
     bool _move;
     b2World *_world;
-
-//    NSMutableArray *_anchorPoints;
-//    
-//    AnchorPoint *_anchorPoint;
-//    AnchorPoint *_anchorPoint1;
-//    
-//    Rope *_rope;
-//    tdRope *_tdRope;
-//    BOOL ropeCreated;
-//    
-//    tsControlSpriteButton *_button;
-//    tsControlButton *_rightButton;
-//    
+    CGPoint _playerDirection;
 }
+
+@property (nonatomic, readwrite) CGPoint playerDirection;
 
 -(id) initWithWorld:(b2World *)world;
 -(CGPoint) locationFromTouches:(NSSet *)touches;
 -(void) moveToFlag:(bool) flag;
--(void) resetLevel;
+-(void) reloadLevel;
 //-(void) update:(ccTime) dt;
 
 @end

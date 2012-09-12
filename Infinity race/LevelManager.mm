@@ -13,6 +13,8 @@
 
 @implementation LevelManager
 
+@synthesize playerDirection = _playerDirection;
+
 -(id) initWithWorld:(b2World *)world
 {
     if ((self = [super init])) {
@@ -21,16 +23,19 @@
         
         _asteroidManager = [[AsteroidManager alloc] initWithWorld:world];
         
-        _asteroidManager.speed = 1.0f;
-        
+
         [self addChild:_asteroidManager];
-        [self scheduleUpdate];
+
         
         _playerManager = [[PlayerManager alloc] initWithWorld: world];
         [self addChild:_playerManager];
         
-        _move = NO;
-    
+
+        
+        [self scheduleUpdate];
+        
+        [self loadLevel];
+        
     //    self.isTouchEnabled = YES;
 //                [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
 //        _playerManager = [[PlayerManager alloc] initWithWorld: world];
@@ -95,9 +100,17 @@
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:INT_MIN+1 swallowsTouches:NO];
 }
 
--(void) resetLevel {
-    [_playerManager resetPosition];
+-(void) reloadLevel {
     self.parent.position = CGPointZero;
+    _playerDirection = CGPointZero;
+    
+    [_asteroidManager reinitAsteroids];
+    [_playerManager reinitPlayer];
+}
+
+-(void) loadLevel {
+    [_asteroidManager initAsteroids];
+    [_playerManager initPlayer];
 }
 
 -(BOOL) ccTouchBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -139,7 +152,6 @@
 }
 
 -(void) update:(ccTime) dt {
-    if (_move == YES) {
         CGPoint _prevPos = [_playerManager.player getPolygonPosition];
         int32 velocityIterations = 8;
         int32 positionIterations = 1;
@@ -148,11 +160,12 @@
         // generally best to keep the time step and iterations fixed.
         _world->Step(dt, velocityIterations, positionIterations);
         
-        [_playerManager accelerate];
+        
+        [_playerManager movePlayer:_playerDirection];
+        
         for (b2Body* b = _world->GetBodyList(); b; b = b->GetNext())
         {
         }
-
 
         CGPoint pos = [_playerManager.player getPolygonPosition];
         
@@ -161,13 +174,11 @@
         
         CCLOG(@"Mypos prev x: %f", myPosition.x);
          
-         myPosition.x -= pos.x-_prevPos.x;
+        myPosition.x -= pos.x-_prevPos.x;
         CCLOG(@"Mypos curr x: %f", myPosition.x);
 
-         self.parent.position = myPosition;
+        self.parent.position = myPosition;
 
-
-    }
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
