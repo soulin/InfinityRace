@@ -169,13 +169,13 @@
 
         CGPoint pos = [_playerManager.player getPolygonPosition];
         
-        CCLOG(@"Prev Pos: %f Curr: %f", _prevPos.x, pos.x);
+//        CCLOG(@"Prev Pos: %f Curr: %f", _prevPos.x, pos.x);
         CGPoint myPosition = self.parent.position;
         
-        CCLOG(@"Mypos prev x: %f", myPosition.x);
+//        CCLOG(@"Mypos prev x: %f", myPosition.x);
          
         myPosition.x -= pos.x-_prevPos.x;
-        CCLOG(@"Mypos curr x: %f", myPosition.x);
+//        CCLOG(@"Mypos curr x: %f", myPosition.x);
 
         self.parent.position = myPosition;
 

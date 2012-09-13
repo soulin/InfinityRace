@@ -47,6 +47,7 @@
     CCLOG(@"Player position: x = %f y = %f", x, y);
 
     [_player setPolygonPosition:ccp(x+_playeOffset, y)];
+    _player.body->SetLinearDamping(0.2f);
 }
 
 /*
@@ -127,8 +128,23 @@
 */
 -(void) movePlayer:(CGPoint) direction {
     b2Vec2 force = b2Vec2(direction.x, direction.y);
+//    b2Vec2 currentVelocity = _player.body->GetLinearVelocity();
     _player.body->ApplyForceToCenter(force);
+
+
+//    CCLOG(@"Current Linear Velocity: x = %f y = %f", currentVelocity.x, currentVelocity.y);
 }
+
+/*-(void) stopPlayer:(CGPoint) direction {
+ //   b2Vec2 force = b2Vec2(direction.x, direction.y);
+   // _player.body->ApplyForceToCenter(force);
+   // b2Vec2 vel = _player.body->GetLinearVelocity();
+   // if (direction.x == 0)
+  //      _player.body->SetLinearVelocity(direction.x, vel.y)
+//    b2Vec2 vel = _player.body->GetLinearVelocity();
+//    CCLOG(@"Current Linear Velocity: x = %f y = %f", vel.x, vel.y);
+}
+*/
 
 -(void) update:(ccTime) dt {
 
